@@ -41,5 +41,11 @@ bool is_valid_input(int argc, string argv[])
 
 string reverse(string str, int len)
 {
+    // base case
+    if (len = 1) {
+        return // hrm need to actually use pointers to access char?
+    }
+
+
     return strcat(str, " TESTING");
 }
