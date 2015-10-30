@@ -17,13 +17,13 @@ int main(int argc, char* argv[])
         // failure
         return 1;
     }
-    printf("Enter string to reverse: ");
+    printf("\nEnter string to reverse: ");
     char* input = GetString();
 
     printf("Reverse string \"%s\"\n", input);
 
     char* result = reverse(input);
-    printf("New string: %s\n", result);
+    printf("New string: %s\n\n", result);
 
     // success
     return 0;
