@@ -51,7 +51,9 @@ char* reverse(char* str)
     first_char[1] = '\0';
     str++; // ohhhh making a new string is the same as moving
            // the pointer up.
-    return strcat(reverse(str), first_char);
+    char* result = strcat(reverse(str), first_char);
+    printf("%s \n", result);
+    return result;
 
     // this will all work easier with putting first at end
     // instead of putting last at beginning
