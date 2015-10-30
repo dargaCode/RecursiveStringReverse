@@ -7,23 +7,22 @@
 
 // function prototypes
 bool is_valid_input(int argc, string argv[]);
-string reverse(string str, int len);
+char* reverse(string str);
 
-int main(int argc, string argv[])
+int main(int argc, char* argv[])
 {
     if (!is_valid_input(argc, argv))
     {
-        printf("ERROR\n");
+        printf("No additional arguments supported!\n");
         // failure
         return 1;
     }
     printf("Enter string to reverse: ");
-    string input = GetString();
-    int len = strlen(input);
+    char* input = GetString();
 
     printf("Reverse string \"%s\"\n", input);
 
-    string result = reverse(input, len);
+    char* result = reverse(input);
     printf("New string: %s\n", result);
 
     // success
@@ -39,11 +38,12 @@ bool is_valid_input(int argc, string argv[])
     return true;
 }
 
-string reverse(string str, int len)
+char* reverse(string str)
 {
+    int len = strlen(str);
     // base case
-    if (len = 1) {
-        return // hrm need to actually use pointers to access char?
+    if (len == 1) {
+        return "test";
     }
 
 
