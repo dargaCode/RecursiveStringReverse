@@ -38,14 +38,18 @@ bool is_valid_input(int argc, string argv[])
     return true;
 }
 
-char* reverse(string str)
+char* reverse(char* str)
 {
     int len = strlen(str);
     // base case
     if (len == 1) {
-        return "test";
+        return str;
     }
-
-
-    return strcat(str, " TESTING");
+    printf("%s \n", str);
+    char* last = str + len - 1;
+    return strcat(last, str); // needs substring
 }
+
+
+
+
