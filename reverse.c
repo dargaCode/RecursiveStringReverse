@@ -46,8 +46,17 @@ char* reverse(char* str)
         return str;
     }
     printf("%s \n", str);
-    char* last = str + len - 1;
-    return strcat(last, str); // needs substring
+    char* first_char = malloc(2 * sizeof(char));
+    first_char[0] = str[0];
+    first_char[1] = '\0';
+    str++; // ohhhh making a new string is the same as moving
+           // the pointer up.
+    return strcat(reverse(str), first_char);
+
+    // this will all work easier with putting first at end
+    // instead of putting last at beginning
+    // malloc new string from first char and \0
+    // just move pointer up one for second string
 }
 
 
