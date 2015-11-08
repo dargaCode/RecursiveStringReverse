@@ -40,6 +40,13 @@ char* concatenate(char* str_a, char* str_b)
 
 char* reverse(char* str)
 {
+    // base case
+    if (strlen(str) == 1)
+    {
+        return str;
+    }
+
+    // substring
     char front[2] = " \0";
     front[0] = str[0];
 
