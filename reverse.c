@@ -4,7 +4,8 @@
 #include <stdlib.h>
 
 // function prototypes
-char* reverse(string str);
+char* reverse(char*);
+char* concatenate(char*, char*);
 
 int main(int argc, char* argv[])
 {
@@ -18,6 +19,13 @@ int main(int argc, char* argv[])
 
     // success
     return 0;
+}
+
+char* concatenate(char* str_a, char* str_b)
+{
+
+    return str_a;
+
 }
 
 char* reverse(char* str)
