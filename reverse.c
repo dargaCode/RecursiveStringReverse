@@ -12,11 +12,10 @@ int main(int argc, char* argv[])
     printf("\nEnter string to reverse: ");
     char* input = GetString();
 
-    printf("Reverse string \"%s\"\n", input);
-
     char* result = reverse(input);
-    printf("New string: %s\n\n", result);
+    printf("\nReversed string: %s\n\n", result);
     free(result);
+
     // success
     return 0;
 }
@@ -57,13 +56,11 @@ char* reverse(char* str)
     strcpy(back, str + 1);
     back[len] = '\0';
 
-    printf("front: %s, back: %s\n", front, back);
+    printf("Old String: %s\n", back);
 
     char* result = concatenate(reverse(back), front);
 
+    printf("New String: %s\n", result);
+
     return result;
 }
-
-
-
-
