@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 
     char* result = reverse(input);
     printf("New string: %s\n\n", result);
-
+    free(result);
     // success
     return 0;
 }
@@ -40,17 +40,26 @@ char* concatenate(char* str_a, char* str_b)
 
 char* reverse(char* str)
 {
+    int len = strlen(str);
+
     // base case
-    if (strlen(str) == 1)
+    if (len == 1)
     {
         return str;
     }
 
-    // substring
+    // substring 1
     char front[2] = " \0";
     front[0] = str[0];
 
-    char* result = concatenate((str + 1), front);
+    // substring 2
+    char back[len];
+    strcpy(back, str + 1);
+    back[len] = '\0';
+
+    printf("front: %s, back: %s\n", front, back);
+
+    char* result = concatenate(reverse(back), front);
 
     return result;
 }
