@@ -40,8 +40,11 @@ char* concatenate(char* str_a, char* str_b)
 
 char* reverse(char* str)
 {
-
-    char* result = concatenate(str, str);
+    char front[2];
+    memset(front, '\0', sizeof(front));
+    strncpy(front, str, 1);
+    //front[1] = '\0';
+    char* result = concatenate(str, front);
 
     return result;
 }
