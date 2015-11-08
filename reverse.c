@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <cs50.h>
 #include <string.h>
 #include <stdlib.h>
+#include <cs50.h>
 
 // function prototypes
 char* reverse(char*);
@@ -27,6 +27,11 @@ char* concatenate(char* str_a, char* str_b)
     const int len_b = strlen(str_b);
 
     char* result = calloc(len_a + len_b + 1, sizeof(*result));
+    if (result == NULL)
+    {
+        printf("Memory failed to allocate!\n");
+        exit(0);
+    }
     strcpy(result, str_a);
     strcat(result, str_b);
 
@@ -35,6 +40,7 @@ char* concatenate(char* str_a, char* str_b)
 
 char* reverse(char* str)
 {
+
     char* result = concatenate(str, str);
 
     return result;
