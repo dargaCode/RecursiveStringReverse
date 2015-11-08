@@ -7,13 +7,22 @@
 char* reverse(char*);
 char* concatenate(char*, char*);
 
+#define COLOR   "\x1b["
+#define RESET   "0m"
+#define RED     "31;1m"
+#define GREEN   "32;1m"
+#define YELLOW  "33;1m"
+
 int main(int argc, char* argv[])
 {
     printf("\nEnter string to reverse: ");
     char* input = GetString();
 
     char* result = reverse(input);
+    printf(COLOR GREEN);
     printf("\nReversed string: %s\n\n", result);
+    printf(COLOR RESET);
+
     free(result);
 
     // success
@@ -56,10 +65,12 @@ char* reverse(char* str)
     strcpy(back, str + 1);
     back[len] = '\0';
 
+    printf(COLOR RED);
     printf("Old String: %s\n", back);
 
     char* result = concatenate(reverse(back), front);
 
+    printf(COLOR YELLOW);
     printf("New String: %s\n", result);
 
     return result;
