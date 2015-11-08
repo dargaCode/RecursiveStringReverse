@@ -23,15 +23,21 @@ int main(int argc, char* argv[])
 
 char* concatenate(char* str_a, char* str_b)
 {
+    const int len_a = strlen(str_a);
+    const int len_b = strlen(str_b);
 
-    return str_a;
+    char* result = calloc(len_a + len_b + 1, sizeof(*result));
+    strcpy(result, str_a);
+    strcat(result, str_b);
 
+    return result;
 }
 
 char* reverse(char* str)
 {
+    char* result = concatenate(str, str);
 
-    return str;
+    return result;
 }
 
 
